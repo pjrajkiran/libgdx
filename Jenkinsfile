@@ -7,6 +7,7 @@ pipeline {
       stage("Build") {
           steps {
               snDevOpsStep '42500b74db6bf300106254c0cf9619b7'
+            echo 'Build....'
               sh 'mvn clean install'
           }
       }
