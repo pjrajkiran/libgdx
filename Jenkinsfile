@@ -7,7 +7,6 @@ pipeline {
       stage("Build") {
           steps {
               snDevOpsStep '42500b74db6bf300106254c0cf9619b7'
-            echo 'Build....'
               sh 'mvn clean install'
           }
       }
@@ -29,7 +28,6 @@ pipeline {
        }
       stage("Deploy") {
           steps {
-            echo 'deploy....'
             snDevOpsStep '4a500b74db6bf300106254c0cf9619b6'
             sh 'mvn test -Dpublish'
             junit '**/target/surefire-reports/*.xml'
