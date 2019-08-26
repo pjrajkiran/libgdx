@@ -29,6 +29,7 @@ pipeline {
        }
       stage("Deploy") {
           steps {
+            echo "Deploying"
             snDevOpsStep '83c34a2bdbd3330070a8ff9dbf9619be'
             sh 'mvn test -Dpublish'
             junit '**/target/surefire-reports/*.xml'
