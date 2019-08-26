@@ -21,8 +21,8 @@ pipeline {
        }
        stage("UAT Test") {
            steps {
-                snDevOpsStep '8fc34a2bdbd3330070a8ff9dbf9619be'
                 echo "UAT Testing"
+                snDevOpsStep '8fc34a2bdbd3330070a8ff9dbf9619be'
                 sh 'mvn test -Dpublish'
                 junit '**/target/surefire-reports/*.xml'
            }
