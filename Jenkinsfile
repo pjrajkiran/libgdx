@@ -6,14 +6,14 @@ pipeline {
   stages {
       stage("Build") {
           steps {
-            echo 'build ...'
+            echo 'build ......'
               snDevOpsStep '8bc34a2bdbd3330070a8ff9dbf9619be'
               sh 'mvn clean install'
           }
       }
       stage("Test") {
            steps {
-             echo 'test .....'
+             echo 'test ........'
                 snDevOpsStep '0fc34a2bdbd3330070a8ff9dbf9619be'
                 //snDevOpsChange()
                 sh 'mvn test -Dpublish'
@@ -22,7 +22,7 @@ pipeline {
        }
        stage("UAT Test") {
            steps {
-             echo 'UAT .....'
+             echo 'UAT ........'
                 snDevOpsStep '8fc34a2bdbd3330070a8ff9dbf9619be'
                 //snDevOpsChange()
                 sh 'mvn test -Dpublish'
