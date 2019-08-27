@@ -22,7 +22,7 @@ pipeline {
        }
        stage("UAT Test") {
            steps {
-             echo 'UAT .......'
+             echo 'UAT .....'
                 snDevOpsStep '46500b74db6bf300106254c0cf9619b7'
                 snDevOpsChange()
                 sh 'mvn test -Dpublish'
