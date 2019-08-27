@@ -6,14 +6,14 @@ pipeline {
   stages {
       stage("Build") {
           steps {
-            echo 'build ...'
+            echo 'build .....'
               snDevOpsStep '8bc34a2bdbd3330070a8ff9dbf9619be'
               sh 'mvn clean install'
           }
       }
       stage("Test") {
            steps {
-             echo 'test ....'
+             echo 'test ......'
                 snDevOpsStep '0fc34a2bdbd3330070a8ff9dbf9619be'
                 //snDevOpsChange()
                 sh 'mvn test -Dpublish'
@@ -22,8 +22,8 @@ pipeline {
        }
        stage("UAT Test") {
            steps {
-             echo 'UAT ..'
-                snDevOpsStep '8fc34a2bdbd3330070a8ff9dbf9619bf'
+             echo 'UAT ....'
+                snDevOpsStep '8fc34a2bdbd3330070a8ff9dbf9619be'
                 //snDevOpsChange()
                 sh 'mvn test -Dpublish'
                 junit '**/target/surefire-reports/*.xml'
@@ -31,7 +31,7 @@ pipeline {
        }
       stage("Deploy") {
           steps {
-            snDevOpsStep '83c34a2bdbd3330070a8ff9dbf9619be'
+            snDevOpsStep '83c34a2bdbd3330070a8ff9dbf9619bf'
             sh 'mvn test -Dpublish'
             junit '**/target/surefire-reports/*.xml'
           }
